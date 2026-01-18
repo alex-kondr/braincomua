@@ -9,7 +9,7 @@ from load_django import *
 from parser_app.models import Product
 
 
-def clean_price(price_str):
+def clean_price(price_str: str):
     if price_str:
         try:
             price_digits = "".join(re.findall(r"\d+", price_str))
@@ -20,7 +20,7 @@ def clean_price(price_str):
     return None
 
 
-def clean_memory(memory_str):
+def clean_memory(memory_str: str):
     if memory_str:
         match = re.search(r"\d+", memory_str)
         if match:
@@ -28,7 +28,7 @@ def clean_memory(memory_str):
     return None
 
 
-def clean_diagonal(diagonal_str):
+def clean_diagonal(diagonal_str: str):
     if diagonal_str:
         match = re.search(r"[\d.]+", diagonal_str)
         if match:
